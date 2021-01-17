@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Latest compiled and minified CSS -->
+      <title>Nothing.co | {% block title %}Shorten that url{% endblock title %}</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://getbootstrap.com/docs/3.3/examples/cover/cover.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+      <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABwgIAACl/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAABEAAQAgAAAgAQABACAAIiABAAEAIAAiIAEAAQAgAiAgAQAQACACICAAEAEAICIAIAEAAQAgIAAgAQABACIgACABAAEAIgAAIAEAARAAAAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAJ/zAAC32wAAtxsAALcbAAC2WwAAdl0AALTbAAC12wAAsdsAALPbAACf8wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon" />
+
+      <!-- <style>
+      body {
+        background-color: #047986;
+
+      }
+
+      .btn-link {
+        color: #032f55;
+        text-shadow: none;
+      }
+      .btn-link:hover {
+        color: #000000;
+      }
+      </style> -->
+
+  </head>
+
+    <body>
+          <div class="site-wrapper">
+
+            <div class="site-wrapper-inner">
+
+              <div class="cover-container">
+                <div class="masthead clearfix">
+                  <div class="inner">
+                    <h3 class="masthead-brand">URL Shortener</h3>
+                    <nav>
+                      <ul class="nav masthead-nav">
+                        <li class=""><a href="/">Home</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+
+                <div class="inner cover">
+                  <h1 class="cover-heading"><h2>{{title}}</h2></h1>
+    <!-- <p class="lead"> Shorten that url</p>  -->
+      <p class="lead">
+    <div class="col-sm-6 col-sm-offset-3 ">
+       <form action="register" method="post">
+        {% csrf_token %}
+
+         <div class="form-group">
+          {% for message in messages %}
+             {% if message.tags == 'warning' %}
+              <div class="alert alert-danger" role="alert">
+                {{message}}
+              </div>
+              {% else %}
+              <div class="alert alert-{{ message.tags }}" role="alert">
+                {{message}}
+              </div>
+              {% endif %}
+
+            {% endfor %}
+           <!-- <label for="exampleInputEmail1">First Name</label>
+           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="first_name" placeholder="First Name">
+         </div>
+
+         <div class="form-group">
+           <label for="exampleInputEmail1">Last Name</label>
+           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="last_name" placeholder="Last Name">
+         </div>
+
+         <div class="form-group"> -->
+           <label for="exampleInputEmail1">User Name</label>
+           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="User Name">
+         </div>
+
+          <div class="form-group">
+           <label for="exampleInputEmail1">Email</label>
+           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Email">
+           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+         </div>
+
+         <!-- <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="Male" value="male" checked>
+          <label class="form-check-label" for="exampleRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="Female" value="female">
+          <label class="form-check-label" for="exampleRadios2">
+            Female
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="Others" value="others">
+          <label class="form-check-label" for="exampleRadios2">
+            Others
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="example-date-input" class="col-2 col-form-label">Date of birth</label>
+          <input class="form-control" name="dob" type="date" value="2020-01-01" id="Dob">
+
+        </div> -->
+
+       <div class="form-group">
+           <label for="exampleInputEmail1">Password</label> <i class="far fa-eye" id="ShowPassword"></i>
+           <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password1" placeholder="Password" id="password">
+         </div>
+
+         <div class="form-group">
+           <label for="exampleInputEmail1">Confirm Password</label>
+           <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password2" placeholder="Confirm Password">
+         </div>
+
+         <button type="submit" class="btn btn-primary">Register</button>
+       </form>
+
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-sm"> -->
+
+      <!-- </div>
+      </div>
+      </div> -->
+    </div>
+    </div>
+    </p>
+    </div>
+
+
+  </div>
+
+</div>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script>
+  const ShowPassword = document.querySelector("#ShowPassword");
+  const password = document.querySelector("#password");
+
+  ShowPassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+
+  </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

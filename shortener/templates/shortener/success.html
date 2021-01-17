@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}
+{{ object.shortcode }} | {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<div >   
+    <h1>Success</h1>
+    <p><a href="{{ object.url }}" class="alert-link">{{ object.url }}</a></p>
+    
+    <p><button type="button" class="btn btn-success"><a href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></button></p>
+        <button type="button" class="btn btn-primary"><a href="/">+ New</a></button>
+
+    <!-- <p><a href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+    <a class="btn btn-lg btn-default" href="/">+ new</a> -->
+</div>
+{% endblock content %}
